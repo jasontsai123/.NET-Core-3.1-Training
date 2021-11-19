@@ -1,0 +1,301 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>客戶資訊</title>
+
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <style type="text/css">
+        [v-cloak] > * {
+            display: none
+        }
+
+        [v-cloak]::before {
+            content: "loading…"
+        }
+
+        .el-table-add-row {
+            margin-top: 10px;
+            width: 80%;
+            height: 34px;
+            border: 1px dashed #c1c1cd;
+            border-radius: 3px;
+            cursor: pointer;
+            justify-content: center;
+            display: flex;
+            line-height: 34px;
+        }
+
+        .demo-table-expand {
+            font-size: 0;
+        }
+
+            .demo-table-expand label {
+                width: 90px;
+                color: #99a9bf;
+            }
+
+            .demo-table-expand .el-form-item {
+                margin-right: 0;
+                margin-bottom: 0;
+                width: 50%;
+            }
+
+        .el-table-content {
+            border-bottom: 1px solid #ebeef5
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak v-loading="loading">
+        <el-row>
+            <el-col :span="24">
+                <el-table class="el-table-content" size="mini" :data="customer.data" height="70vh" style="width: 80%" highlight-current-row>
+                    <el-table-column type="index"></el-table-column>
+                    <el-table-column type="expand">
+                        <template slot-scope="scope">
+                            <el-form label-position="left" inline class="demo-table-expand">
+                                <el-form-item label="聯絡人">
+                                    <span v-if="scope.row.isSet">
+                                        <el-input size="mini" placeholder="請輸聯絡人" v-model="scope.row.contactName">
+                                        </el-input>
+                                    </span>
+                                    <span v-else>{{ scope.row.contactName }}</span>
+                                </el-form-item>
+                                <el-form-item label="地址">
+                                    <span v-if="scope.row.isSet">
+                                        區號：
+                                        <el-input size="mini" placeholder="請輸入區號" v-model="scope.row.postalCode">
+                                        </el-input>
+                                        城市：
+                                        <el-input size="mini" placeholder="請輸入城市" v-model="scope.row.city">
+                                        </el-input>
+                                        地址：
+                                        <el-input size="mini" placeholder="請輸入地址" v-model="scope.row.address">
+                                        </el-input>
+                                    </span>
+                                    <span v-else>{{ scope.row.postalCode }} {{ scope.row.city }} {{ scope.row.address }}</span>
+                                </el-form-item>
+                                <el-form-item label="電話">
+                                    <span v-if="scope.row.isSet">
+                                        <el-input size="mini" placeholder="請輸入電話" v-model="scope.row.phone">
+                                        </el-input>
+                                    </span>
+                                    <span v-else>{{ scope.row.phone }}</span>
+                                </el-form-item>
+                                <el-form-item label="傳真">
+                                    <span v-if="scope.row.isSet">
+                                        <el-input size="mini" placeholder="請輸入傳真" v-model="scope.row.fax">
+                                        </el-input>
+                                    </span>
+                                    <span v-else>{{ scope.row.fax }}</span>
+                                </el-form-item>
+                            </el-form>
+                        </template>
+                    </el-table-column>
+                    <el-table-column v-for="(v,i) in customer.columns" :prop="v.field" :label="v.title" :width="v.width">
+                        <template slot-scope="scope">
+                            <span v-if="scope.row.isSet">
+                                <el-input size="mini" placeholder="請輸入內容" v-model="scope.row[v.field]">
+                                </el-input>
+                            </span>
+                            <span v-else>{{scope.row[v.field]}}</span>
+                        </template>
+                    </el-table-column>
+                    <el-table-column label="操作" width="100">
+                        <template slot-scope="scope">
+                            <span class="el-tag el-tag--info el-tag--mini" style="cursor: pointer;" v-on:click="updateCustomer(scope.row,scope.$index,true)">
+                                {{scope.row.isSet?'儲存':"修改"}}
+                            </span>
+                            <span v-if="!scope.row.isSet" class="el-tag el-tag--danger el-tag--mini" style="cursor: pointer;">
+                                删除
+                            </span>
+                            <span v-else class="el-tag  el-tag--mini" style="cursor: pointer;" v-on:click="updateCustomer(scope.row,scope.$index,false)">
+                                取消
+                            </span>
+                        </template>
+                    </el-table-column>
+                </el-table>
+            </el-col>
+            <el-col :span="24">
+                <div class="el-table-add-row" style="width: 80%;" v-on:click="addCustomer()">
+                    <span>+ 新增</span>
+                </div>
+            </el-col>
+        </el-row>
+        <span v-if="customer.errorMessage!=null" class="text-danger"><i class="el-icon-error"></i>{{customer.errorMessage}}</span>
+    </div>
+</body>
+
+</html>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/portal-vue@2.1.6/dist/portal-vue.umd.min.js"></script>
+<!-- Required scripts -->
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+    Vue.prototype.$http = axios;
+    //主要内容
+    var app = new Vue({
+        el: "#app",
+        data: {
+            customer: {
+                sel: null,//选中行
+                columns: [
+                    { field: "customerID", title: "顧客", width: 120 },
+                    { field: "companyName", title: "公司", width: 350 },
+                    { field: "country", title: "國籍", width: 120 }
+                ],
+                data: [{
+                    //address:"",
+                    //city:"",
+                    //companyName:"",
+                    //contactName:"",
+                    //contactTitle:"",
+                    //country:"",
+                    //customerID:"",
+                    //fax:"",
+                    //phone:"",
+                    //postalCode:"",
+                    //region:""
+                }],
+                errorMessage: null
+            },
+            loading: null
+        },
+        methods: {
+            //讀取所有資料
+            query() {
+                app.customer.data = [{}];
+                this.$http.get('../api/customer/Get')
+                    .then(function (response) {
+                        var result = response.data;
+                        console.log('Data', result.data);
+                        app.customer.data = result.data;
+                    })
+                    .catch(function (err) {
+                        var customError = err.response.data.errors;
+                        console.log('Error', customError);
+                        var errorsLength = customError.length - 1;
+                        if (errorsLength !== -1)
+                            document.getElementById('app').innerHTML = '<span class="text-danger">' + customError[errorsLength].message + '</span>';
+                    });
+            },
+            //新增資料
+            addCustomer() {
+                for (let i of app.customer.data) {
+                    if (i.isSet) return app.$message.warning("請先保存目前編輯項目");
+                }
+                let j = {
+                    id: 0,
+                    address: null,
+                    city: null,
+                    companyName: null,
+                    contactName: null,
+                    contactTitle: null,
+                    country: null,
+                    customerID: null,
+                    fax: null,
+                    phone: null,
+                    postalCode: null,
+                    region: null,
+                    "isSet": true,
+                    "isAdd": true,
+                    "_temporary": true
+                };
+                app.customer.data.push(j);
+                app.customer.sel = JSON.parse(JSON.stringify(j));
+            },
+            //修改
+            updateCustomer(row, index, cg) {
+                //點擊修改 判斷是否有保存所有編輯
+                for (let i of app.customer.data) {
+                    if (i.isSet && i.id != row.id) {
+                        app.$message.warning("請先保存目前編輯項目");
+                        return false;
+                    }
+                }
+                //是否是取消操作
+                if (!cg) {
+                    if (!app.customer.sel.id) app.customer.data.splice(index, 1);
+                    row.isAdd = !row.isAdd;
+                    return row.isSet = !row.isSet;
+                }
+                //提交資料
+                if (row.isSet) {
+                    //post到伺服器
+                    app.customer.errorMessage = null;
+                    (function () {
+                        //單筆新增
+                        if (row.isAdd) {
+                            this.axios.post('../api/customer/Insert', {
+                                address: row.address,
+                                city: row.city,
+                                companyName: row.companyName,
+                                contactName: row.contactName,
+                                contactTitle: row.contactTitle,
+                                country: row.country,
+                                customerID: row.customerID,
+                                fax: row.fax,
+                                phone: row.phone,
+                                postalCode: row.postalCode,
+                                region: row.region
+                            })
+                                .then(function (response) {
+                                    console.log(response);
+                                    app.$message({
+                                        type: 'success',
+                                        message: "儲存成功!"
+                                    });
+                                    //刷新更新後的資料
+                                    app.loading = true; // 開始
+                                    app.query();
+                                    app.loading = false; // 停止
+                                    row.isSet = false;
+                                    row.isAdd = false;
+                                })
+                                .catch(function (err) {
+                                    var customError = err.response.data.errors;
+                                    var errorsLength = customError.length - 1;
+                                    console.log('Error', customError);
+                                    if (errorsLength !== -1) {
+                                        app.$message({
+                                            showClose: true,
+                                            message: customError[errorsLength].description,
+                                            type: 'error'
+                                        });
+                                        app.customer.errorMessage = customError[errorsLength].description;
+                                    }
+                                });
+
+                        } else {
+                            let data = JSON.parse(JSON.stringify(app.customer.sel));
+                            for (let k in data) row[k] = data[k];
+                            app.$message({
+                                type: 'success',
+                                message: "儲存成功!"
+                            });
+                            //刷新更新後的資料
+                            app.loading = true; // 開始
+                            app.query();
+                            app.loading = false; // 停止
+                            row.isSet = false;
+                        }
+
+                    })();
+                } else {
+                    app.customer.sel = JSON.parse(JSON.stringify(row));
+                    row.isSet = true;
+                }
+            }
+        }
+    });
+
+    app.loading = true; // 開始
+    app.query();
+    app.loading = false; // 停止
+</script>

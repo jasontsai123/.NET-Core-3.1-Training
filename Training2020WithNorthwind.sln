@@ -1,0 +1,76 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Application", "1.Application", "{3F8740F5-529C-40EE-9E01-184381DDBC26}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Test", "2.Test", "{67C707F1-E194-4F96-9FA2-D6499333C8DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0.Core", "0.Core", "{C4F160E9-82F8-474E-A7FF-E0BF810576A2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Training2020WithNorthwind.Common", "Training2020WithNorthwind.Common\Training2020WithNorthwind.Common.csproj", "{EF073373-60FF-4145-80EC-62292C215694}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Training2020WithNorthwind.Repository", "Training2020WithNorthwind.Repository\Training2020WithNorthwind.Repository.csproj", "{92D2804C-1488-471A-A185-CB3B65DF1D2C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Training2020WithNorthwind.Service", "Training2020WithNorthwind.Service\Training2020WithNorthwind.Service.csproj", "{FE29E0F3-B0FE-45BD-8A41-5A4F7244F06B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Training2020WithNorthwind.Application", "Training2020WithNorthwind.Application\Training2020WithNorthwind.Application.csproj", "{37C535B1-9950-4CE0-9968-6BB596BBBD02}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Training2020WithNorthwind.RepositoryTests", "Training2020WithNorthwind.RepositoryTests\Training2020WithNorthwind.RepositoryTests.csproj", "{BCFFC4FC-0529-40F7-B668-0CFDE90A5574}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Training2020WithNorthwind.CommonTests", "Training2020WithNorthwind.CommonTests\Training2020WithNorthwind.CommonTests.csproj", "{243C6336-5045-4380-8CFE-E1AB43F40077}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Training2020WithNorthwind.ServiceTests", "Training2020WithNorthwind.ServiceTests\Training2020WithNorthwind.ServiceTests.csproj", "{240DCD40-EF2F-4C06-8038-12890FA2CD90}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF073373-60FF-4145-80EC-62292C215694}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF073373-60FF-4145-80EC-62292C215694}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF073373-60FF-4145-80EC-62292C215694}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF073373-60FF-4145-80EC-62292C215694}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92D2804C-1488-471A-A185-CB3B65DF1D2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92D2804C-1488-471A-A185-CB3B65DF1D2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92D2804C-1488-471A-A185-CB3B65DF1D2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92D2804C-1488-471A-A185-CB3B65DF1D2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE29E0F3-B0FE-45BD-8A41-5A4F7244F06B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE29E0F3-B0FE-45BD-8A41-5A4F7244F06B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE29E0F3-B0FE-45BD-8A41-5A4F7244F06B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE29E0F3-B0FE-45BD-8A41-5A4F7244F06B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37C535B1-9950-4CE0-9968-6BB596BBBD02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37C535B1-9950-4CE0-9968-6BB596BBBD02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37C535B1-9950-4CE0-9968-6BB596BBBD02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37C535B1-9950-4CE0-9968-6BB596BBBD02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCFFC4FC-0529-40F7-B668-0CFDE90A5574}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCFFC4FC-0529-40F7-B668-0CFDE90A5574}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCFFC4FC-0529-40F7-B668-0CFDE90A5574}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCFFC4FC-0529-40F7-B668-0CFDE90A5574}.Release|Any CPU.Build.0 = Release|Any CPU
+		{243C6336-5045-4380-8CFE-E1AB43F40077}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{243C6336-5045-4380-8CFE-E1AB43F40077}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{243C6336-5045-4380-8CFE-E1AB43F40077}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{243C6336-5045-4380-8CFE-E1AB43F40077}.Release|Any CPU.Build.0 = Release|Any CPU
+		{240DCD40-EF2F-4C06-8038-12890FA2CD90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{240DCD40-EF2F-4C06-8038-12890FA2CD90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{240DCD40-EF2F-4C06-8038-12890FA2CD90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{240DCD40-EF2F-4C06-8038-12890FA2CD90}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EF073373-60FF-4145-80EC-62292C215694} = {C4F160E9-82F8-474E-A7FF-E0BF810576A2}
+		{92D2804C-1488-471A-A185-CB3B65DF1D2C} = {C4F160E9-82F8-474E-A7FF-E0BF810576A2}
+		{FE29E0F3-B0FE-45BD-8A41-5A4F7244F06B} = {C4F160E9-82F8-474E-A7FF-E0BF810576A2}
+		{37C535B1-9950-4CE0-9968-6BB596BBBD02} = {3F8740F5-529C-40EE-9E01-184381DDBC26}
+		{BCFFC4FC-0529-40F7-B668-0CFDE90A5574} = {67C707F1-E194-4F96-9FA2-D6499333C8DE}
+		{243C6336-5045-4380-8CFE-E1AB43F40077} = {67C707F1-E194-4F96-9FA2-D6499333C8DE}
+		{240DCD40-EF2F-4C06-8038-12890FA2CD90} = {67C707F1-E194-4F96-9FA2-D6499333C8DE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A6956D61-D506-4BD2-B76E-A1276CBB9015}
+	EndGlobalSection
+EndGlobal

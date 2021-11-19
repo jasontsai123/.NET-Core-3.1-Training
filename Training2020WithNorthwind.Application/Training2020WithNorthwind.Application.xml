@@ -1,0 +1,435 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Training2020WithNorthwind.Application</name>
+    </assembly>
+    <members>
+        <member name="P:Training2020WithNorthwind.Application.Controllers.Models.Parameter.CustomerParameter.CustomerID">
+            <summary>
+            顧客ID
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Controllers.Models.Parameter.CustomerParameter.CompanyName">
+            <summary>
+            公司名稱
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Controllers.Models.Parameter.CustomerParameter.ContactName">
+            <summary>
+            ContactName
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Controllers.Models.Parameter.CustomerParameter.ContactTitle">
+            <summary>
+            ContactTitle
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Controllers.Models.Parameter.CustomerParameter.Address">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Controllers.Models.Parameter.CustomerParameter.City">
+            <summary>
+            城市
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Controllers.Models.Parameter.CustomerParameter.Region">
+            <summary>
+            區域
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Controllers.Models.Parameter.CustomerParameter.PostalCode">
+            <summary>
+            郵遞區號
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Controllers.Models.Parameter.CustomerParameter.Country">
+            <summary>
+            國家
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Controllers.Models.Parameter.CustomerParameter.Phone">
+            <summary>
+            手機
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Controllers.Models.Parameter.CustomerParameter.Fax">
+            <summary>
+            傳真
+            </summary>
+        </member>
+        <member name="T:Training2020WithNorthwind.Application.Controllers.Models.ViewModel.CustomerViewModel">
+            <summary>
+            顧客資料
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Controllers.Models.ViewModel.CustomerViewModel.CustomerID">
+            <summary>
+            顧客ID
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Controllers.Models.ViewModel.CustomerViewModel.CompanyName">
+            <summary>
+            公司名稱
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Controllers.Models.ViewModel.CustomerViewModel.ContactName">
+            <summary>
+            ContactName
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Controllers.Models.ViewModel.CustomerViewModel.ContactTitle">
+            <summary>
+            ContactTitle
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Controllers.Models.ViewModel.CustomerViewModel.Address">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Controllers.Models.ViewModel.CustomerViewModel.City">
+            <summary>
+            城市
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Controllers.Models.ViewModel.CustomerViewModel.Region">
+            <summary>
+            區域
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Controllers.Models.ViewModel.CustomerViewModel.PostalCode">
+            <summary>
+            郵遞區號
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Controllers.Models.ViewModel.CustomerViewModel.Country">
+            <summary>
+            國家
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Controllers.Models.ViewModel.CustomerViewModel.Phone">
+            <summary>
+            手機
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Controllers.Models.ViewModel.CustomerViewModel.Fax">
+            <summary>
+            傳真
+            </summary>
+        </member>
+        <member name="T:Training2020WithNorthwind.Application.Controllers.v1.CustomerController">
+            <summary>
+            物件 控制器
+            </summary>
+        </member>
+        <member name="M:Training2020WithNorthwind.Application.Controllers.v1.CustomerController.#ctor(Training2020WithNorthwind.Service.Implements.Interfaces.ICustomerService,AutoMapper.IMapper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Training2020WithNorthwind.Application.Controllers.v1.CustomerController"/> class.
+            </summary>
+            <param name="customerService">The customer service.</param>
+            <param name="mapper">The mapper.</param>
+        </member>
+        <member name="M:Training2020WithNorthwind.Application.Controllers.v1.CustomerController.GetAsync">
+            <summary>
+            Gets this instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Training2020WithNorthwind.Application.Controllers.v1.CustomerController.InsertAsync(Training2020WithNorthwind.Application.Controllers.Models.Parameter.CustomerParameter)">
+            <summary>
+            Inserts the asynchronous.
+            </summary>
+            <param name="parameter">The parameter.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Training2020WithNorthwind.Application.Infrastructure.ActionFilter.RequestParameterValidatorAttribute">
+            <summary>
+            參數驗證器
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.Filters.ActionFilterAttribute"/>
+        </member>
+        <member name="M:Training2020WithNorthwind.Application.Infrastructure.ActionFilter.RequestParameterValidatorAttribute.#ctor(System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Training2020WithNorthwind.Application.Infrastructure.ActionFilter.RequestParameterValidatorAttribute"/> class.
+            </summary>
+            <param name="validatorType">Type of the validator.</param>
+        </member>
+        <member name="M:Training2020WithNorthwind.Application.Infrastructure.ActionFilter.RequestParameterValidatorAttribute.OnActionExecutionAsync(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext,Microsoft.AspNetCore.Mvc.Filters.ActionExecutionDelegate)">
+            <summary>
+            </summary>
+            <param name="context"></param>
+            <param name="next"></param>
+            <inheritdoc/>
+        </member>
+        <member name="T:Training2020WithNorthwind.Application.Infrastructure.Middlewares.RequestFilterMiddleware">
+            <summary>
+            class RequestFilterMiddleware
+            </summary>
+        </member>
+        <member name="M:Training2020WithNorthwind.Application.Infrastructure.Middlewares.RequestFilterMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Training2020WithNorthwind.Application.Infrastructure.Middlewares.RequestFilterMiddleware"/> class.
+            </summary>
+            <param name="next">The next.</param>
+            <param name="httpContextAccessor">The HTTP context accessor.</param>
+        </member>
+        <member name="M:Training2020WithNorthwind.Application.Infrastructure.Middlewares.RequestFilterMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Invokes the specified context.
+            </summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="T:Training2020WithNorthwind.Application.Infrastructure.Middlewares.RequestFilterMiddlewareExtensions">
+            <summary>
+            class RequestFilterMiddlewareExtensions
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Infrastructure.Middlewares.RequestFilterMiddlewareExtensions.DefaultWhiteListIpCollection">
+            <summary>
+            預設的 IP 白名單
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Infrastructure.Middlewares.RequestFilterMiddlewareExtensions.DefaultRestrictPathCollection">
+            <summary>
+            預設的限制路徑名稱
+            </summary>
+        </member>
+        <member name="M:Training2020WithNorthwind.Application.Infrastructure.Middlewares.RequestFilterMiddlewareExtensions.UseRequestFilter(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Uses the request filter.
+            </summary>
+            <param name="builder">The builder.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Training2020WithNorthwind.Application.Infrastructure.Middlewares.RequestFilterMiddlewareExtensions.UseRequestFilter(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Uses the Request filter.
+            </summary>
+            <param name="builder">The builder.</param>
+            <param name="whiteListIpCollection">The white list ip collection.</param>
+            <param name="restrictPathCollection">The restrict path collection.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Exceptions.ValidateException">
+            <summary>
+            Class ValidateException.
+            </summary>
+            <seealso cref="T:System.Exception" />
+        </member>
+        <member name="M:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Exceptions.ValidateException.#ctor(Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Models.RequestValidateResult)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Exceptions.ValidateException"/> class.
+            </summary>
+            <param name="result">The result.</param>
+        </member>
+        <member name="M:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Exceptions.ValidateException.#ctor(System.String,Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Models.RequestValidateResult)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Exceptions.ValidateException"/> class.
+            </summary>
+            <param name="programCode">The program code.</param>
+            <param name="result">The result.</param>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Exceptions.ValidateException.ProgramCode">
+            <summary>
+            The program code.
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Exceptions.ValidateException.Result">
+            <summary>
+            The result.
+            </summary>
+        </member>
+        <member name="T:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Filters.CustomActionResultFilter">
+            <summary>
+            CustomActionResultFilter
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.Filters.IAsyncActionFilter" />
+        </member>
+        <member name="M:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Filters.CustomActionResultFilter.OnActionExecutionAsync(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext,Microsoft.AspNetCore.Mvc.Filters.ActionExecutionDelegate)">
+            <summary>
+            Called asynchronously before the action, after model binding is complete.
+            </summary>
+            <param name="context">The <see cref="T:Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext" />.</param>
+            <param name="next">The <see cref="T:Microsoft.AspNetCore.Mvc.Filters.ActionExecutionDelegate" />. Invoked to execute the next action filter or the action itself.</param>
+        </member>
+        <member name="T:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Filters.CustomExceptionFilter">
+            <summary>
+            CustomExceptionFilter
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.Filters.IAsyncExceptionFilter"/>
+        </member>
+        <member name="T:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Filters.ValidateExceptionFilter">
+            <summary>
+            Class ValidateExceptionFilter.
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.Filters.IAsyncExceptionFilter"/>
+        </member>
+        <member name="T:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Models.ErrorMessage">
+            <summary>
+            Class ErrorMessage.
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Models.ErrorMessage.ErrorCode">
+            <summary>
+            The error code.
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Models.ErrorMessage.Message">
+            <summary>
+            The message.
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Models.ErrorMessage.Description">
+            <summary>
+            The description.
+            </summary>
+        </member>
+        <member name="T:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Models.FailureInformation">
+            <summary>
+            class FailureInformation
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Models.FailureInformation.ErrorCode">
+            <summary>
+            The error code.
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Models.FailureInformation.Message">
+            <summary>
+            The message.
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Models.FailureInformation.Description">
+            <summary>
+            The description.
+            </summary>
+        </member>
+        <member name="T:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Models.FailureResultOutputModel">
+            <summary>
+            執行失敗的 OutputModel.
+            </summary>
+        </member>
+        <member name="M:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Models.FailureResultOutputModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Models.FailureResultOutputModel"/> class.
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Models.FailureResultOutputModel.Method">
+            <summary>
+            The Method
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Models.FailureResultOutputModel.Status">
+            <summary>
+            The status
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Models.FailureResultOutputModel.Errors">
+            <summary>
+            The errors
+            </summary>
+        </member>
+        <member name="T:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Models.RequestValidateResult">
+            <summary>
+            Class RequestValidateResult.
+            </summary>
+        </member>
+        <member name="M:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Models.RequestValidateResult.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Models.RequestValidateResult"/> class.
+            </summary>
+        </member>
+        <member name="M:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Models.RequestValidateResult.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Models.RequestValidateResult"/> class.
+            </summary>
+            <param name="success">if set to <c>true</c> [success].</param>
+        </member>
+        <member name="M:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Models.RequestValidateResult.#ctor(System.Boolean,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Models.RequestValidateResult"/> class.
+            </summary>
+            <param name="success">if set to <c>true</c> [success].</param>
+            <param name="parameterName">Name of the parameter.</param>
+            <param name="parameterValue">The parameter value.</param>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Models.RequestValidateResult.Success">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Models.RequestValidateResult"/> is success.
+            </summary>
+            <value><c>true</c> if success; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Models.RequestValidateResult.ParameterName">
+            <summary>
+            ParameterName.
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Models.RequestValidateResult.ParameterValue">
+            <summary>
+            ParameterValue.
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Models.RequestValidateResult.Error">
+            <summary>
+            ErrorMessage.
+            </summary>
+        </member>
+        <member name="T:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Models.SuccessResultOutputModel`1">
+            <summary>
+            執行完成的 OutputModel
+            </summary>
+            <typeparam name="T">任意型別</typeparam>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Models.SuccessResultOutputModel`1.Method">
+            <summary>
+            The Method.
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Models.SuccessResultOutputModel`1.Status">
+            <summary>
+            The Status.
+            </summary>
+        </member>
+        <member name="P:Training2020WithNorthwind.Application.Infrastructure.OutputWrapper.Models.SuccessResultOutputModel`1.Data">
+            <summary>
+            Data.
+            </summary>
+        </member>
+        <member name="T:Training2020WithNorthwind.Application.Infrastructure.Validators.ErrorMessageFormat">
+            <summary>
+            Class FluentValidation Error Message Format.
+            </summary>
+        </member>
+        <member name="M:Training2020WithNorthwind.Application.Infrastructure.Validators.ErrorMessageFormat.NotNull(System.String)">
+            <summary>
+            【{參數名稱}】參數不得為空值!
+            </summary>
+            <param name="parameterName">參數名稱</param>
+            <returns></returns>
+        </member>
+        <member name="M:Training2020WithNorthwind.Application.Infrastructure.Validators.ErrorMessageFormat.NotEmpty(System.String)">
+            <summary>
+            【{參數名稱}】參數不得為空字串!
+            </summary>
+            <param name="parameterName">參數名稱</param>
+            <returns>
+            The not empty.
+            </returns>
+        </member>
+        <member name="M:Training2020WithNorthwind.Application.Infrastructure.Validators.ErrorMessageFormat.NotGreaterThanMaxStringLength(System.String,System.Int32)">
+            <summary>
+            【{參數名稱}】參數字串最大長度不得超過{最大字串長度}!
+            </summary>
+            <param name="parameterName">參數名稱</param>
+            <param name="maxLength">最大字串長度</param>
+            <returns></returns>
+        </member>
+        <member name="M:Training2020WithNorthwind.Application.Infrastructure.Validators.ParameterValidators.CustomerParameterValidator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Training2020WithNorthwind.Application.Infrastructure.Validators.ParameterValidators.CustomerParameterValidator"/> class.
+            </summary>
+        </member>
+    </members>
+</doc>
