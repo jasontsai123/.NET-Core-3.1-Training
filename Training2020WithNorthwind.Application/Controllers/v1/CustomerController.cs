@@ -18,7 +18,7 @@ namespace Training2020WithNorthwind.Application.Controllers.v1
     /// </summary>
     [Route("api/customer/[action]")]
     [ApiController]
-    public class CustomerController : Controller
+    public class CustomerController : ControllerBase
     {
         private readonly ICustomerService _customerService;
         private readonly IMapper _mapper;
