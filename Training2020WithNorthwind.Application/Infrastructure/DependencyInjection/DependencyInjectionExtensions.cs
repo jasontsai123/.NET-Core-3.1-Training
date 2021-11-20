@@ -2,6 +2,7 @@
 using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
 using Training2020WithNorthwind.Application.Infrastructure.Mappings;
+using Training2020WithNorthwind.Common.Infrastructure.Caching;
 using Training2020WithNorthwind.Repository.Implements;
 using Training2020WithNorthwind.Repository.Implements.Decorators;
 using Training2020WithNorthwind.Repository.Implements.Interfaces;
@@ -39,9 +40,19 @@ namespace Training2020WithNorthwind.Application.Infrastructure.DependencyInjecti
 
             //Repository
             services.AddScoped<ICustomersRepository, CustomersRepository>()
-                .Decorate<ICustomersRepository, TryCatchCustomersRepository>();
+                .Decorate<ICustomersRepository, TryCatchCustomersRepository>()
+                .Decorate<ICustomersRepository, CachedCustomersRepository>();
 
             services.AddSingleton<HttpClient>();
+
+            //Cache
+            services.AddDistributedMemoryCache();
+            //services.AddStackExchangeRedisCache(options =>
+            //{
+            //    // Redis Server 的 IP 跟 Port
+            //    options.Configuration = "127.0.0.1:6379";
+            //});
+            services.AddScoped<ICacheProvider, CacheProvider>();
 
             return services;
         }
