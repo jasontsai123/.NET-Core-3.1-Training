@@ -3,6 +3,7 @@ using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
 using Training2020WithNorthwind.Application.Infrastructure.Mappings;
 using Training2020WithNorthwind.Repository.Implements;
+using Training2020WithNorthwind.Repository.Implements.Decorators;
 using Training2020WithNorthwind.Repository.Implements.Interfaces;
 using Training2020WithNorthwind.Repository.Infrastructure.Constants;
 using Training2020WithNorthwind.Repository.Infrastructure.Constants.Interfaces;

@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Dapper;
 using Training2020WithNorthwind.Common.Infrastructure.Attributes;
 using Training2020WithNorthwind.Repository.Enities;
 using Training2020WithNorthwind.Repository.FakeData;
@@ -10,7 +7,7 @@ using Training2020WithNorthwind.Repository.Implements.Base;
 using Training2020WithNorthwind.Repository.Implements.Interfaces;
 using Training2020WithNorthwind.Repository.Infrastructure.Helpers.Interfaces;
 
-namespace Training2020WithNorthwind.Repository.Implements
+namespace Training2020WithNorthwind.Repository.Implements.Decorators
 {
     public class TryCatchCustomersRepository : BaseRepository, ICustomersRepository
     {
