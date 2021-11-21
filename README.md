@@ -25,7 +25,6 @@
  
  [另一種資料存取對映處理方式的選擇 - Dapper](https://kevintsengtw.blogspot.com/2015/09/dapper.html)
  
- 保持撰寫SQL Command靈活性同時又對映到ORM的強型別
  EF自動產生Model實在太好用了，在這邊也推薦一個[mrkt](https://kevintsengtw.blogspot.com)大大提供的Dapper可以對映產出Model方法
 [Dapper - 使用 LINQPad 快速產生相對映 SQL Command 查詢結果的類別](https://kevintsengtw.blogspot.com/2015/10/dapper-linqpad-sql-command.html)
  ### Coreprofiler
