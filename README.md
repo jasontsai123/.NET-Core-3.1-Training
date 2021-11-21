@@ -12,3 +12,11 @@
  - HealthCheck
  - Decorator Pattern
  - MSTest
+ ### Swagger
+ ### Redis
+ [快取機制IDistributedCache](https://johncode-1.gitbook.io/.net-core/kuai-qu-ji-zhi-idistributedcache)
+ ### Dapper
+ ### Coreprofiler
+ ### HealthCheck
+ ### Decorator Pattern
+ ### MSTest
