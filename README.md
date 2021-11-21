@@ -10,7 +10,7 @@
  - [Dapper](#dapper)
  - [Coreprofiler](#coreprofiler)
  - [HealthCheck](#healthcheck)
- - [Decorator Pattern](#decoratorpattern)
+ - [Decorator Pattern](#decorator-pattern)
  - [MSTest](#mstest)
  ### Swagger
  ### Redis
